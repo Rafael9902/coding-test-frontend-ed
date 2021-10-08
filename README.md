@@ -8,11 +8,9 @@ XKCD is “A webcomic of romance, sarcasm, math, and language” available at ht
 
 **Figure 1. Example of XKCD comic**
 
-The goal of this test project is to check your Python and JavaScript skills, requiring you to build a site to manage XKCD comics.
+The goal of this test project is to check your Python and JavaScript skills, requiring you to build a site to manage XKCD comics. XKCD exposes a simple JSON interface, and the details can be seen at https://xkcd.com/json.html. 
 
-XKCD exposes a simple JSON interface, and the details can be seen at https://xkcd.com/json.html.
-
-The site will allow the creation of users, and the users will be able to insert comics’ metadata into a database (PostgreSQL is preferred).
+The site will allow the creation of users, and the users will be able to insert comics into a database (PostgreSQL is preferred). Use the XKCD interface to get the comic data and store the information.
 
 You need to create two projects, one for the backend and one for the frontend. Backend will provide web services that the frontend can consume.
 
@@ -161,9 +159,11 @@ No parameters
 
 ### Methods to be implemented:
 
+- You will need to create a function "get_comic_metadata(comic_id)", that given a number from 1 to n, being n the last comic (using the XKCD link, without a parameter will bring the current comic (last comic)). The function will obtain the comic metadata from the XKCD interface, this will help with inserting comics.
+
 **POST /comic**
 
-Creates or updates a comic
+Insert/Update comic
 
  - Example of body:
 
