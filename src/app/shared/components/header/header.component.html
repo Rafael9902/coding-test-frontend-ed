@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Comic System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <form [formGroup]="searchForm" *ngIf="isLogged" class="form-inline" (ngSubmit)="onSubmit()">
+      <input class="form-control mr-sm-2" formControlName="tag" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success " type="submit">Search</button>
+    </form>
+
+      <ul *ngIf="isLogged" class="navbar-nav " style="padding-right: 80px">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="https://i.postimg.cc/jCYKQm6N/default.png" width="40" height="40" class="rounded-circle">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" [routerLink]="['/profile']">Edit Profile</a>
+            <a class="dropdown-item" [routerLink]="['/create']">Create Comics</a>
+            <a style="color: white" class="dropdown-item" (click)="logout()">Log Out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+</nav>

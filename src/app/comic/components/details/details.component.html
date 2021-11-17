@@ -1,0 +1,84 @@
+<form [formGroup]="comicForm" (ngSubmit)="onSubmit()">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+
+              <div *ngIf="comicMessage" [className]="comicMessage.includes('successfully')
+              ? 'alert alert-success' : 'alert alert-danger'" role="alert">
+                {{ comicMessage }}
+              </div>
+
+              <h2 class="fw-bold mb-2 text-uppercase">New Comic</h2>
+              <p class="text-white-50 mb-5">Please enter your login and password!</p>
+
+              <div class="form-outline form-white mb-4">
+                <input type="text" id="month" class="form-control form-control-lg"
+                       placeholder="Month (Example: 6)" formControlName="month" required/>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="text" id="num" class="form-control form-control-lg"
+                       placeholder="Num" formControlName="num" required/>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="text" id="link" class="form-control form-control-lg"
+                       placeholder="Link" formControlName="link" required/>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="text" id="safe_title" class="form-control form-control-lg"
+                       placeholder="Safe Title" formControlName="safe_title" required/>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="text" id="transcript" class="form-control form-control-lg"
+                       placeholder="Transcript" formControlName="transcript" required/>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="text" id="news" class="form-control form-control-lg"
+                       placeholder="News" formControlName="news" required/>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="text" id="alt" class="form-control form-control-lg"
+                       placeholder="Alt" formControlName="alt" required/>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="text" id="img" class="form-control form-control-lg"
+                       placeholder="Image" formControlName="img" required/>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="text" id="title" class="form-control form-control-lg"
+                       placeholder="Title" formControlName="title" required/>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="text" id="day" class="form-control form-control-lg"
+                       placeholder="Day" formControlName="day" required/>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="text" id="year" class="form-control form-control-lg"
+                       placeholder="Year" formControlName="year" required/>
+              </div>
+
+              <button class="btn btn-outline-light btn-lg px-5" type="submit"
+                      [disabled]="!comicForm.valid">Create</button>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

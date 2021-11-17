@@ -1,0 +1,26 @@
+<br>
+
+<div *ngIf="user !== undefined && comics.length == 0" style="background: #212529 !important; color: white" class="jumbotron">
+  <h1 class="display-4">Hello, {{user.first_name}} {{user.last_name}}</h1>
+  <p class="lead">XKCD is “A webcomic of romance, sarcasm, math, and language” available at
+    <a href="https://xkcd.com">https://xkcd.com</a>
+  </p>
+  <hr class="my-4">
+  <p>This system allow you to create and update comics</p>
+  <p class="lead">
+  </p>
+</div>
+
+<div class="row">
+  <div class="col-sm-6" *ngFor="let comic of comics" >
+    <div class="card" style="width: 30rem;" (click)="getComic(comic.id)">
+      <img class="card-img-top" src="{{ comic.img }}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><b> {{ comic.title }} </b> </h5>
+        <p class="card-text">{{ comic.transcript }}</p>
+        <p class="card-text"><small class="text-muted">Year: {{ comic.year }}</small></p>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
